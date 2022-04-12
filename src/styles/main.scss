@@ -69,6 +69,10 @@ body {
         font-weight: 400;
         line-height: 2.4rem;
     }
+    &_big-600 {
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
     &_big-700 {
         font-size: 1.6rem;
         font-weight: 700;
@@ -109,11 +113,17 @@ body {
 
 .header {
     max-width: 1140px;
-    margin: 0 37rem 6rem 39rem;
-    padding-top: 4.1rem;
+    /*margin: 0 37rem 6rem 39rem;*/
+    /*padding-top: 4.1rem;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 3rem 39rem;
+    background-color: #E5E5E5;
+    z-index: 3;
     &__menu {   
         flex-basis: 75.3%;
     }
@@ -143,6 +153,7 @@ body {
 }
 
 .banner {
+    padding-top: 11.4rem;
     margin-bottom: 16.6rem;
     &__img {
         margin-bottom: 11.7rem;
@@ -297,5 +308,56 @@ body {
     &__img {
         width: 100%;
         height: auto;
+    }
+}
+
+.pluses {
+    margin-bottom: 20rem;
+    &__title {
+        max-width: 87rem;
+        margin-top: 17.6rem;
+        margin-bottom: 6.7rem;
+    }
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 2.1fr 1fr;
+        margin-top: .8rem;
+    }
+    &__box {
+        display: flex;
+        align-items: center;
+        gap: 4.1rem;
+    }
+    &__img {
+        width: 40px;
+        height: 40px;
+    }
+    &__block {
+        max-width: 24.4rem;
+    }    
+}
+
+.skills {
+    &__grid {
+        display: grid;
+        grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+        justify-items: center;
+    }
+    &__box {
+        width: 28.6rem;
+        height: 14.8rem;
+        border: 1px solid rgba(1, 1, 1, 0.3);
+        text-align: center;
+        :hover {
+            filter: grayscale(0);
+            opacity: 1;
+            cursor: pointer;
+            transition: .3s;
+        }
+    }
+    &__img {
+        filter: grayscale(1);
+        opacity: .3;
     }
 }
