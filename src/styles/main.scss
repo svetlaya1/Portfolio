@@ -371,6 +371,14 @@ body {
     &__grid {
         display: grid;
         grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+        :hover {
+            .skills__img {
+                filter: grayscale(0);
+                opacity: 1;
+                cursor: pointer;
+                transition: .3s;
+            }
+        }
     }
     &__box {
         display: flex;
@@ -393,6 +401,35 @@ body {
     }
 }
 
+.tooltip {
+   position: relative;
+   &__text {
+        visibility: hidden;
+        width: 23.2rem;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 150%;
+        background-image: url(/src/images/tooltip.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #fff;
+        text-align: center;
+        padding: 27px 15px;
+        top: 130px;
+        left: 11px;
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+        transition: .3s;
+   }
+   &:hover {
+       .tooltip__text {
+            visibility: visible;
+            opacity: 1;
+        }
+   }
+}
 .price {
     margin-bottom: 14.7rem;
     &__header {
@@ -433,6 +470,9 @@ body {
         font-size: 42px;
         margin-top: 4.8rem;
         position: relative;
+    }
+    &__button {
+        max-width: 18rem;;
     }
 }
 
