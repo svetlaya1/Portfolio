@@ -88,6 +88,7 @@ button.addEventListener("mousemove", (e)=> {
 })
 
 
+
 // ОТПРАВКА ФОРМЫ ОБРАТНОЙ СВЯЗИ 
 
 "use strict"
@@ -103,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		if (error === 0) {
 			form.classList.add('_sending'); 
-			let response = await fetch('sendmail.php', {
+			let response = await fetch('/src/sendmail.php', {
 				method: 'POST',
 				body: FormData
 			});

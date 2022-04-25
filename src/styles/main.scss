@@ -548,9 +548,9 @@ body {
             box-shadow: 0 0 12px rgba(212, 0, 0, .7);
         }
     }
-    &__btn {
+    &__button {
         text-decoration: none;
-        background-color: $red;
+        background-color: #D40000;
         border: none;
         padding: 2.4rem 23.6rem;
         color: $white;
@@ -559,7 +559,7 @@ body {
         z-index: 1;
         margin-top: 40px;
         cursor: pointer;
-        &:before{
+        &:before {
             content: '';
             position:absolute;
             left: var(--x);
@@ -572,10 +572,10 @@ body {
             transform: translate(-50%, -50%);
             transition: width 0.3s linear, height 0.3s linear
         }
-        &:hover:before{
+        &:hover:before {
             width: 15rem;
             height: 15rem;
-          }
+        }
     }
 }
 
@@ -770,4 +770,4 @@ Select c dropdown на JS
 .open .arrow-4-right:after {
     transform-origin: center center;
     transform: rotate(70deg);
-}
+} 
