@@ -15,7 +15,7 @@ var swiper = new Swiper(".portfolioSwiper", {
 
 
 
-
+ // 	ДРОПДАУН   
   
   // Полифилл для метода forEach для NodeList
 if (window.NodeList && !NodeList.prototype.forEach) {
@@ -67,8 +67,70 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
 	});
 });
 
-
+// СТРЕЛКА ДЛЯ ДРОПДАУНА
 
 $(".dropdown__button").click(function() {
     $(this).toggleClass("open");
+});
+
+// КНОПКА ОТПРАВИТЬ С КРАСИВЫМ ХОВЕР
+
+const button = document.getElementById('btn');
+
+button.addEventListener("mousemove", (e)=> {
+  
+  const posX = e.pageX - e.target.offsetLeft;
+  const posY = e.pageY - e.target.offsetTop;
+  
+  e.target.style.setProperty("--x", `${posX}px`);
+  e.target.style.setProperty("--y", `${posY}px`);
+  
+})
+
+
+// ОТПРАВКА ФОРМЫ ОБРАТНОЙ СВЯЗИ 
+
+"use strict"
+
+document.addEventListener('DOMContentLoaded', function () {
+	const form = document.getElementById('form');
+	form.addEventListener('submit', formSend);
+
+	async function formSend(e) {
+		e.preventDefault();
+
+		let error = formValidete(form);
+
+		if (error === 0) {
+
+		}
+		else {
+			alert('Заполните обязательные поля');
+		}
+	}
+
+
+	function formValidete(form) {
+		let error = 0;
+		let formReq = document.querySelectorAll('._req');
+
+		for (let index = 0; index < formReq.length; index++) {
+			const input = formReq[index];
+			formRemoveError(input);
+
+			if (input.value === "") {
+				formAddError(input);
+				error++;
+			}
+		}
+		return error;
+	}
+	function formAddError(input) {
+		input.parentElement.classList.add('_error');
+		input.classList.add('_error');
+	}
+	function formRemoveError(input) {
+		input.parentElement.classList.remove('_error');
+		input.classList.remove('_error');
+	}
 });
