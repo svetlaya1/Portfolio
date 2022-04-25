@@ -102,7 +102,19 @@ document.addEventListener('DOMContentLoaded', function () {
 		let error = formValidete(form);
 
 		if (error === 0) {
-
+			form.classList.add('_sending'); /*
+			let response = await fetch('sendmail.php', {
+				method: 'POST',
+				body: FormData
+			});
+			if (response.ok) {
+				let result = await response.json();
+				alert(result.message);
+				formPreview.innerHTML = '';
+				form.resert();
+			} else {
+				alert("Ошибка");
+			}*/
 		}
 		else {
 			alert('Заполните обязательные поля');
