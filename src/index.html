@@ -426,12 +426,36 @@
                             <a class="socials__link description_big-400" href="https://github.com/svetlaya1">GitHub</a>
                         </li>
                     </ul>
-                    <div class="form">
-
+                    <div class="contacts__form">
+                        <label class="contacts__label">Телефон</label>
+                        <input class="contacts__input" type="tel" placeholder="Ваш телефон">
+                        <label class="contacts__label">Выберете удобный способ связи</label>
+                         <!-- Dropdown -->
+                         <div class="form-group">
+                            <div class="dropdown">
+                                <button class="dropdown__button">Telegram
+                                    
+<div class="arrow-4">
+    <span class="arrow-4-left"></span>
+    <span class="arrow-4-right"></span>
+</div>
+                                </button>
+                                <ul class="dropdown__list">
+                                    <li class="dropdown__list-item" data-value="telegram">Telegram</li>
+                                    <li class="dropdown__list-item" data-value="whatsapp">WhatsApp</li>
+                                    <li class="dropdown__list-item" data-value="viber">Viber</li>
+                                    <li class="dropdown__list-item" data-value="phone">Звонок на телефон</li>
+                                    <li class="dropdown__list-item" data-value="sms">SMS сообщение</li>
+                                </ul>
+                                <input type="text" name="select-category" value="" class="dropdown__input-hidden" >
+                            </div>
+                        </div>
+                        <!-- END -- Dropdown -->
                     </div>
                 </div>
             </div>
         </section>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </body>
 </html>
