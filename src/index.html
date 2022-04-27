@@ -28,11 +28,11 @@
                     </li>
                 </ul>
             </nav>
-            <a href="tel:+79237777777" class="header__tel">8 914 952-95-00</a>
+            <a href="tel:+79237777777" class="header__tel" target="_blank">8 914 952-95-00</a>
             <svg class="line-vertical" width="1" height="24">
                 <rect width="1" height="24"></rect>
             </svg>
-            <a href="mailto:alexdev@gmail.com" class="header__email">svetlaya_st@list.ru</a>
+            <a href="mailto:alexdev@gmail.com" class="header__email" target="_blank">svetlaya_st@list.ru</a>
         </header>
         <section class="banner">
             <div class="container">
@@ -48,19 +48,19 @@
                     <span class="headline__discuss description_big-700">Обсудить проект&nbsp;&nbsp;&nbsp;&nbsp;&rarr;</span>
                     <ul class="socials">
                         <li>
-                            <a class="socials__link description_big-400" href="https://vk.com/tro_svetlana">ВК</a>
+                            <a class="socials__link description_big-400" href="https://vk.com/tro_svetlana" target="_blank">ВК</a>
                         </li>
                         <svg class="line-vertical" width="1" height="24">
                             <rect width="1" height="24"></rect>
                         </svg>
                         <li>
-                            <a class="socials__link description_big-400" href="https://instagram.com/svetlaya_tr">Instagram</a>
+                            <a class="socials__link description_big-400" href="https://instagram.com/svetlaya_tr" target="_blank">Instagram</a>
                         </li>
                         <svg class="line-vertical" width="1" height="24">
                             <rect width="1" height="24"></rect>
                         </svg>
                         <li>
-                            <a class="socials__link description_big-400" href="https://github.com/svetlaya1">GitHub</a>
+                            <a class="socials__link description_big-400" href="https://github.com/svetlaya1" target="_blank">GitHub</a>
                         </li>
                     </ul>
                 </div> 
@@ -411,50 +411,89 @@
                 <div class="contacts__box">
                     <ul class="socials">
                         <li>
-                            <a class="socials__link description_big-400" href="https://vk.com/tro_svetlana">ВК</a>
+                            <a class="socials__link description_big-400" href="https://vk.com/tro_svetlana" target="_blank">ВК</a>
                         </li>
                         <svg class="line-vertical" width="1" height="24">
                             <rect width="1" height="24"></rect>
                         </svg>
                         <li>
-                            <a class="socials__link description_big-400" href="https://instagram.com/svetlaya_tr">Instagram</a>
+                            <a class="socials__link description_big-400" href="https://instagram.com/svetlaya_tr" target="_blank">Instagram</a>
                         </li>
                         <svg class="line-vertical" width="1" height="24">
                             <rect width="1" height="24"></rect>
                         </svg>
                         <li>
-                            <a class="socials__link description_big-400" href="https://github.com/svetlaya1">GitHub</a>
+                            <a class="socials__link description_big-400" href="https://github.com/svetlaya1" target="_blank">GitHub</a>
                         </li>
                     </ul>
-                    <div class="contacts__form">
-                        <label class="contacts__label">Телефон</label>
-                        <input class="contacts__input" type="tel" placeholder="Ваш телефон">
-                        <label class="contacts__label">Выберете удобный способ связи</label>
-                         <!-- Dropdown -->
-                         <div class="form-group">
-                            <div class="dropdown">
-                                <button class="dropdown__button">Telegram
-                                    
-<div class="arrow-4">
-    <span class="arrow-4-left"></span>
-    <span class="arrow-4-right"></span>
-</div>
-                                </button>
-                                <ul class="dropdown__list">
-                                    <li class="dropdown__list-item" data-value="telegram">Telegram</li>
-                                    <li class="dropdown__list-item" data-value="whatsapp">WhatsApp</li>
-                                    <li class="dropdown__list-item" data-value="viber">Viber</li>
-                                    <li class="dropdown__list-item" data-value="phone">Звонок на телефон</li>
-                                    <li class="dropdown__list-item" data-value="sms">SMS сообщение</li>
-                                </ul>
-                                <input type="text" name="select-category" value="" class="dropdown__input-hidden" >
+                    <div class="form">
+                        <form class="contacts__form" id="form">
+                            <label class="contacts__label">Телефон*:</label>
+                            <input class="contacts__input _req" type="tel" placeholder="Ваш телефон" name="tel">
+                            <label class="contacts__label">Выберете удобный способ связи</label>
+                             <!-- Dropdown -->
+                             <div class="form-group">
+                                <div class="dropdown">
+                                    <button class="dropdown__button">Telegram
+                                        <div class="arrow-4">
+                                            <span class="arrow-4-left"></span>
+                                            <span class="arrow-4-right"></span>
+                                        </div>
+                                    </button>
+                                    <ul class="dropdown__list">
+                                        <li class="dropdown__list-item" data-value="telegram">Telegram</li>
+                                        <li class="dropdown__list-item" data-value="whatsapp">WhatsApp</li>
+                                        <li class="dropdown__list-item" data-value="viber">Viber</li>
+                                        <li class="dropdown__list-item" data-value="phone">Звонок на телефон</li>
+                                        <li class="dropdown__list-item" data-value="sms">SMS сообщение</li>
+                                    </ul>
+                                    <input type="text" name="select-category" value="" class="dropdown__input-hidden" >
+                                </div>
                             </div>
-                        </div>
-                        <!-- END -- Dropdown -->
+                            <!-- END -- Dropdown -->
+                            <a class="contacts__button description_big-700" id="btn" href="#">Отправить</a>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
+        <footer class="footer">
+            <div class="container">
+                <svg class="line-horisontal" width="1140" height="1">
+                    <rect width="1140" height="1"></rect>
+                </svg>
+                <div class="footer__box">
+                    <nav class="footer__menu">
+                        <ul class="footer__nav">
+                            <li class="header__item">
+                                <a href="#" class="footer__link">Обо мне</a>
+                            </li>
+                            <li class="header__item">
+                                <a href="#" class="footer__link">Портфолио</a>
+                            </li>
+                            <li class="header__item">
+                                <a href="#" class="footer__link">Этапы работ</a>
+                            </li>
+                            <li class="header__item">
+                                <a href="#" class="footer__link">Цены</a>
+                            </li>
+                            <li class="header__item">
+                                <a href="#" class="footer__link">Обратная связь</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a href="tel:+79237777777" class="footer__tel" target="_blank">8 914 952-95-00</a>
+                    <svg class="line-vertical" width="1" height="24">
+                        <rect width="1" height="24"></rect>
+                    </svg>
+                    <a href="mailto:alexdev@gmail.com" class="footer__email" target="_blank">svetlaya_st@list.ru</a>
+                </div>
+                <div class="footer__title">
+                    <p>© 2020, Все права защищены</p>
+                    <p>Сделано в рамках курса учебной платформы <a href="https://www.instagram.com/annblok_webdev/" target="_blank">Frontend Blok</a></p>
+                </div>
+            </div>
+        </footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </body>

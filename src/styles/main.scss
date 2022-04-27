@@ -94,8 +94,9 @@ body {
 .headline {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 3.3rem;
+    align-items: flex-start;
+    margin-top: 10.5rem;
+    margin-bottom: 3.8rem;
 }
 
 .socials {
@@ -108,6 +109,7 @@ body {
     list-style-type: none;
     padding: 0;
     position: relative;
+    margin: 0;
     &__link {
         color: $black;
         text-decoration: none;
@@ -121,8 +123,6 @@ body {
 
 .header {
     max-width: 1140px;
-    /*margin: 0 37rem 6rem 39rem;*/
-    /*padding-top: 4.1rem;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -477,7 +477,7 @@ body {
 }
 
 .contacts {
-    margin-bottom: 20rem;
+    margin-bottom: 11.7rem;
     &__header {
         align-items: flex-start;
         margin-bottom: 4.7rem;
@@ -492,19 +492,39 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        margin-top: 3.6rem;
+        margin-top: 5.8rem;
     }
     &__form {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
         flex-direction: column;
+
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(243, 242, 240, 0.7) url(/src/images/loading.gif) center / 50px no-repeat;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease 0s;
+            z-index: 3;
+        }
+        &._sending {
+            &::after {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
     }
     &__label {
         color: $black;
         font-size: 12px;
         opacity: .8;
-        margin-top: 2.3rem;
         margin-bottom: 11px;
     }
     &__input {
@@ -516,9 +536,99 @@ body {
         opacity: 1;
         font-size: 12px;
         padding-left: 20px;
+        margin-bottom: 2.6rem;
         &::placeholder {
             opacity: 0.2;
             font-size: 12px;
+        }
+        &:focus {
+            box-shadow: 0 0 15px rgba(231, 230, 226, 1);
+        }
+        &._error {
+            box-shadow: 0 0 12px rgba(212, 0, 0, .7);
+        }
+    }
+    &__button {
+        text-decoration: none;
+        background-color: #D40000;
+        border: none;
+        padding: 2.4rem 23.6rem;
+        color: $white;
+        position: relative;
+        overflow:hidden;
+        z-index: 1;
+        margin-top: 40px;
+        cursor: pointer;
+        &:before {
+            content: '';
+            position:absolute;
+            left: var(--x);
+            top: var(--y);
+            width: 0px;
+            height: 0px;
+            background: radial-gradient(circle closest-side, #ff0000, #FF000000);
+            border-radius: 50%;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s linear, height 0.3s linear;
+        }
+        &:hover:before {
+            width: 15rem;
+            height: 15rem;
+        }
+    }
+}
+
+.footer {
+    &__box {
+        max-width: 1140px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        top: 0;
+        padding: 5.7rem 0 2.6rem 0;
+        z-index: 3;
+    }
+    &__menu {   
+        flex-basis: 75.3%;
+    }
+    &__nav {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding-left: 0;
+        gap: 2.8rem;
+    }
+    &__link {
+        color: $black;
+        text-decoration: none;
+        transition: .3s;
+        &:hover {
+            color: $red;
+        }
+    }
+    &__tel, &__email {
+       color: $black;
+        text-decoration: none;
+        transition: .3s;
+        &:hover {
+            color: $red;
+        } 
+    }
+    &__title {
+        font-size: 12px;
+        line-height: 150%;
+        color: rgba(43, 53, 65, 0.3);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        max-width: 1141px;
+        & a {
+            color: rgba(43, 53, 65, 0.3);
+            &:hover {
+                color: rgba(43, 53, 65, 1);
+            }
         }
     }
 }
@@ -540,55 +650,37 @@ Select c dropdown на JS
         border: none;
         height: 6.4rem;
     
-        padding-top: 24px;
-        padding-bottom: 13px;
-        padding-left: 20px;
-        padding-right: 35px;
+        padding-top: 2.4rem;
+        padding-bottom: 1.3rem;
+        padding-left: 2rem;
+        padding-right: 3.5rem;
     
         font-weight: 400;
         font-size: 12px;
         line-height: 150%;
         cursor: pointer;
-
-        /*&::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            right: 15px;
-            transform: translateY(-50%);
-        
-            Рисуем треугольник 
-            width: 0;
-            height: 0;
-            border-width: 10.4px 6px 0 6px;
-            border-color: #79849B transparent transparent transparent;
-            border-style: solid;
-        
-            Снимаем клик с треугольника 
-            pointer-events: none;
-        }*/
     }
     &__list {
         display: none;
 
         position: absolute;
         left: 0;
-        top: 61px;
+        top: 64px;
     
         margin: 0;
-        padding: 0;
+        padding: 0 0 1.4rem 0;
         list-style-type: none;
 
         font-weight: 400;
         font-size: 12px;
     
-        background-color: rgba(1, 1, 1, .05);
+        background-color: #e7e6e4;
         border: none;
         overflow: hidden;
     
         width: 100%;
     
-        z-index: 1;
+        z-index: 2;
         &--visible {
             display: block;
         }
@@ -597,8 +689,8 @@ Select c dropdown на JS
             padding: 0;
             border: none;
             border-bottom: 0px;
-            padding: 13px 20px;
-            height: 1.1rem;
+            padding: 1.3rem 2rem;
+            height: 1rem;
             opacity: .4;
             cursor: pointer;
 
@@ -613,59 +705,63 @@ Select c dropdown на JS
     }
 }
 
+
+/* *******************
+Стрелка для dropdown на JS
+******************* */
+
 .arrow-4 {
     position: relative;
     cursor: pointer;
-    margin:20px;
-    width: 66px;
-    height: 30px;
-}
-.arrow-4-left {
-    position: absolute;
-    background-color: transparent;
-    top: -37px;
-    right: -425px;
-    width: 40px;
-    height: 10px;
-    display: block;
-    transform: rotate(35deg);
-    float: right;
-    border-radius: 2px;
-}
-.arrow-4-left:after {
-    content: "";
-    background-color: $black;
-    width: 9px;
-    height: 1px;
-    display: block;
-    float: right;
-    border-radius: 6px 10px 10px 6px;
-    transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
-    z-index: -1;
-}
- 
-.arrow-4-right {
-    position: absolute;
-    background-color: transparent;
-    top: -19px;
-    right: -437px;
-    width: 40px;
-    height: 10px;
-    display: block;
-    transform: rotate(-35deg);
-    float: right;
-    border-radius: 2px;
-}
-.arrow-4-right:after {
-    content: "";
-    background-color: $black;
-    width: 9px;
-    height: 1px;
-    display: block;
-    float: right;
-    border-radius: 10px 6px 6px 10px;
-    transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
-    z-index: -1;
+    margin: 2rem;
+    width: 6.6rem;
+    height: 3rem;
+    &-left {
+        position: absolute;
+        background-color: transparent;
+        top: -37px;
+        right: -425px;
+        width: 40px;
+        height: 10px;
+        display: block;
+        transform: rotate(35deg);
+        float: right;
+        border-radius: 2px;
+        &:after {
+            content: "";
+            background-color: $black;
+            width: 9px;
+            height: 1px;
+            display: block;
+            float: right;
+            border-radius: 6px 10px 10px 6px;
+            transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
+            z-index: -1;
+        }
+    }
+    &-right {
+        position: absolute;
+        background-color: transparent;
+        top: -19px;
+        right: -437px;
+        width: 40px;
+        height: 10px;
+        display: block;
+        transform: rotate(-35deg);
+        float: right;
+        border-radius: 2px;
+        &:after {
+            content: "";
+            background-color: $black;
+            width: 9px;
+            height: 1px;
+            display: block;
+            float: right;
+            border-radius: 10px 6px 6px 10px;
+            transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
+            z-index: -1;
+        }
+    }
 }
 .open .arrow-4-left:after {
     transform-origin: center center;
@@ -674,4 +770,4 @@ Select c dropdown на JS
 .open .arrow-4-right:after {
     transform-origin: center center;
     transform: rotate(70deg);
-}
+} 
