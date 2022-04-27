@@ -131,7 +131,11 @@ body {
     top: 0;
     padding: 3rem 39rem;
     background-color: #E5E5E5;
+    transition: all .3s ease;
     z-index: 3;
+    &.out {
+        transform: translateY(-100%);
+    }
     &__menu {   
         flex-basis: 75.3%;
     }
