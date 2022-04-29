@@ -15,6 +15,7 @@ var swiper = new Swiper(".portfolioSwiper", {
 
 
 
+
  // 	ДРОПДАУН   
   
   // Полифилл для метода forEach для NodeList
@@ -102,6 +103,51 @@ $(window).scroll(function() {
 	}
 	scrollPrev = scrolled;
 });
+
+
+// ПЛАВНЫЙ ПЕРЕХОД ПО ЯКОРНЫМ ССЫЛКАМ МЕНЮ
+
+$(document).ready(function(){
+	$("#menu").on("click","a", function (event) {
+		//отменяем стандартную обработку нажатия по ссылке
+		event.preventDefault();
+
+		//забираем идентификатор бока с атрибута href
+		var id  = $(this).attr('href'),
+
+		//узнаем высоту от начала страницы до блока на который ссылается якорь
+			top = $(id).offset().top;
+		
+		//анимируем переход на расстояние - top за 1500 мс
+		$('body,html').animate({scrollTop: top-60}, 1500);
+	});
+});
+
+
+// Pop-up Обсудить проект
+
+$('.open_popup').click(function() {
+    var popup_id = $('#' + $(this).attr("rel"));
+    $(popup_id).show();
+    $('.overlay').show();
+})
+$('.popup .close, .overlay').click(function() {
+    $('.overlay, .popup').hide();
+})
+
+
+// Pop-up Бургер меню 
+
+$('.open_burger').click(function() {
+    var burger_id = $('#' + $(this).attr("rel"));
+    $(burger_id).show();
+    $('.overlay').show();
+})
+$('.burger .close, .overlay').click(function() {
+    $('.overlay, .burger').hide();
+})
+
+
 
 /*
 
