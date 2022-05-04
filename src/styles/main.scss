@@ -1024,6 +1024,7 @@ body {
    position: relative;
    &__text {
         visibility: hidden;
+        position: relative;
         width: 23.2rem;
         font-size: 10px;
         font-weight: 400;
@@ -1038,7 +1039,7 @@ body {
         left: 11px;
         /* Position the tooltip */
         position: absolute;
-        z-index: 1;
+        z-index: 3;
         opacity: 0;
         transition: .3s;
         @media (max-width: $r_desk_hd) {
@@ -1332,8 +1333,11 @@ body {
         @media (max-width: $r_desk) {
             width: 37.8rem;
         }
-        @media (max-width: $r_mob_470) {
+        @media (max-width: $r_mob_540) {
             width: 30.8rem;
+        }
+        @media (max-width: 359px) {
+            width: 27.8rem;
         }
         &::placeholder {
             opacity: 0.2;
@@ -1362,9 +1366,10 @@ body {
         }
         @media (max-width: $r_mob_540) {
             font-size: 1.6rem;
-        }
-        @media (max-width: $r_mob_470) {
             padding: 2.4rem 12.1rem;
+        }
+        @media (max-width: 359px) {
+            padding: 2.4rem 88px;
         }
         &:before {
             content: '';
@@ -1498,8 +1503,11 @@ Select c dropdown на JS
     @media (max-width: $r_desk) {
         width: 39.8rem;
     }
-    @media (max-width: $r_mob_470) {
+    @media (max-width: $r_mob_540) {
         width: 33rem;
+    }
+    @media (max-width: 359px) {
+        width: 30.75rem;
     }
     &__button {
         position: relative;
@@ -1591,11 +1599,14 @@ Select c dropdown на JS
         @media (max-width: $r_desk) {
             right: -255px;
         }
-        @media (max-width: $r_mob_470) {
+        @media (max-width: $r_mob_540) {
             right: -190px;
         }
         @media (max-width: $r_mob_400) {
             right: -148px;
+        }
+        @media (max-width: 359px) {
+            right: -138px;
         }
         &:after {
             content: "";
@@ -1623,11 +1634,14 @@ Select c dropdown на JS
         @media (max-width: $r_desk) {
             right: -268px;
         }
-        @media (max-width: $r_mob_470) {
+        @media (max-width: $r_mob_540) {
             right: -203px;
         }
         @media (max-width: $r_mob_400) {
             right: -161px;
+        }
+        @media (max-width: 359px) {
+            right: -151px;
         }
         &:after {
             content: "";
@@ -1673,13 +1687,32 @@ Pop-up Обсудить проект
     background: $grey; 
     width: 56rem;
     height: 51.2rem;
-    top: 28%;
-    left: 38%; 
-    margin:-100px 0 0 -100px; 
+    top: 20%;
+    left: 0;
+    right: 0; 
+    margin:0 auto; 
     z-index:1000;  
     padding:30px;
+    @media (max-width: $r_desk) {
+        width: 40rem;
+    }
+    @media (max-width: $r_mob_540) {
+        width: 33rem;
+        height: 49.2rem;
+        padding: 23px 20px;
+    }
+    @media (max-width: $r_mob_400) {
+        height: 54rem;
+    }
+    @media (max-width: 359px) {
+        width: 31rem;
+        padding: 17px;
+    }
     &__box {
         margin: 30px auto 0;
+        @media (max-width: $r_mob_540) {
+            margin: 41px auto 0;
+        }
     }
     &__title {
         font-weight: 700;
@@ -1687,15 +1720,24 @@ Pop-up Обсудить проект
         letter-spacing: 0.03em;
         text-transform: uppercase;
         text-align: center;
+        @media (max-width: $r_mob_540) {
+            font-size: 16px;
+        }
     }
     &__text {
         line-height: 150%;
         text-align: center;
         max-width: 32.2rem;
         margin: 0 auto 17px;
+        @media (max-width: $r_mob_540) {
+            margin: 0 auto 5px;
+        }
     }
     &__form {
         margin: 3.9rem auto;
+        @media (max-width: $r_mob_400) {
+            margin: 2.9rem auto;
+        }
     }
 }
 .close {
@@ -1731,15 +1773,16 @@ Pop-up Бургер меню
 }
 .burger {
     display:none; 
-    position:fixed; 
-    background: $grey; 
-    width: 56rem;
+    position: fixed;
+    background: #F3F2F0;
+    width: 92.1%;
     height: 51.2rem;
-    top: 28%;
-    left: 38%; 
-    margin:-100px 0 0 -100px; 
-    z-index:1000;  
-    padding:30px;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 1000;
+    padding: 30px;
     &__box {
         margin: 30px auto 0;
     }
