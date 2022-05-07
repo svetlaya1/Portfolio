@@ -74,7 +74,7 @@ $(".dropdown__button").click(function() {
     $(this).toggleClass("open");
 });
 
-/*
+
 // КНОПКА ОТПРАВИТЬ С КРАСИВЫМ ХОВЕР
 
 const button = document.getElementById('btn');
@@ -87,7 +87,7 @@ button.addEventListener("mousemove", (e)=> {
   e.target.style.setProperty("--x", `${posX}px`);
   e.target.style.setProperty("--y", `${posY}px`);
   
-}) */
+}) 
 
 // ПОЯВЛЕНИЕ МЕНЮ ПРИ СКРОЛЛЕ ВВЕРХ И СКРЫТИЕ ПРИ СКРОЛЛЕ ВНИЗ
 
