@@ -74,6 +74,7 @@ $(".dropdown__button").click(function() {
     $(this).toggleClass("open");
 });
 
+/*
 // КНОПКА ОТПРАВИТЬ С КРАСИВЫМ ХОВЕР
 
 const button = document.getElementById('btn');
@@ -86,7 +87,7 @@ button.addEventListener("mousemove", (e)=> {
   e.target.style.setProperty("--x", `${posX}px`);
   e.target.style.setProperty("--y", `${posY}px`);
   
-})
+}) */
 
 // ПОЯВЛЕНИЕ МЕНЮ ПРИ СКРОЛЛЕ ВВЕРХ И СКРЫТИЕ ПРИ СКРОЛЛЕ ВНИЗ
 
@@ -119,7 +120,7 @@ $(document).ready(function(){
 			top = $(id).offset().top;
 		
 		//анимируем переход на расстояние - top за 1500 мс
-		$('body,html').animate({scrollTop: top-60}, 1500);
+		$('body,html').animate({scrollTop: top-90}, 1500);
 	});
 });
 
@@ -143,13 +144,11 @@ $('.open_burger').click(function() {
     $(burger_id).show();
     $('.overlay').show();
 })
-$('.burger .close, .overlay').click(function() {
+$('.burger .close, .overlay, .footer__link').click(function() {
     $('.overlay, .burger').hide();
 })
 
 
-
-/*
 
 // ОТПРАВКА ФОРМЫ ОБРАТНОЙ СВЯЗИ 
 
@@ -210,4 +209,4 @@ document.addEventListener('DOMContentLoaded', function () {
 		input.parentElement.classList.remove('_error');
 		input.classList.remove('_error');
 	}
-});*/
+});

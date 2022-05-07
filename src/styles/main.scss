@@ -1361,6 +1361,7 @@ body {
         z-index: 1;
         margin-top: 40px;
         cursor: pointer;
+        transition: .3s;
         @media (max-width: $r_desk) {
             padding: 2.4rem 15.6rem;
         }
@@ -1371,7 +1372,11 @@ body {
         @media (max-width: 359px) {
             padding: 2.4rem 88px;
         }
-        &:before {
+        &:hover {
+            background-color: #EA0E00;
+            transition: .3s;
+        }
+       /* &:before {
             content: '';
             position:absolute;
             left: var(--x);
@@ -1387,9 +1392,11 @@ body {
         &:hover:before {
             width: 15rem;
             height: 15rem;
-        }
+        }*/
     }
+    
 }
+
 
 .footer {
     &__box {
@@ -1597,7 +1604,7 @@ Select c dropdown на JS
         float: right;
         border-radius: 2px;
         @media (max-width: $r_desk) {
-            right: -255px;
+            right: -256px;
         }
         @media (max-width: $r_mob_540) {
             right: -190px;
@@ -1656,6 +1663,7 @@ Select c dropdown на JS
         }
     }
 }
+
 .open .arrow-4-left:after {
     transform-origin: center center;
     transform: rotate(-70deg);
@@ -1775,16 +1783,51 @@ Pop-up Бургер меню
     display:none; 
     position: fixed;
     background: #F3F2F0;
-    width: 92.1%;
-    height: 51.2rem;
+    width: 98%;
+    height: 56rem;
     top: 0;
     left: 0;
     right: 0;
     margin: 0 auto;
     z-index: 1000;
-    padding: 30px;
+    padding: 10px;
+    @media (max-width: $r_mob_400) {
+        height: 66rem;
+    }
+    @media (max-width: 359px) {
+        height: 63rem;
+    }
     &__box {
-        margin: 30px auto 0;
+        margin: 63px auto 0;
+    }
+    &__menu {
+        font-size: 2.6rem;
+        @media (max-width: 359px) {
+            font-size: 2rem;
+        }
+    }
+    &__nav {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+    &__line {
+        opacity: .2;
+    }
+    &__contacts {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    &__socials {
+        margin: 0 auto;
+        @media (max-width: $r_mob_470) {
+            max-width: 200px;
+        }
     }
 }
 .close {
