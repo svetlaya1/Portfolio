@@ -129,11 +129,15 @@ $(document).ready(function(){
 
 $('.open_popup').click(function() {
     var popup_id = $('#' + $(this).attr("rel"));
+	var body = document.querySelector("body"); // Переменная для запрета прокрутки страницы при открытии модалки
     $(popup_id).show();
     $('.overlay').show();
+	body.style.overflow = 'hidden'; // Запрещаем прокрутку станицы при открытии модалки
 })
-$('.popup .close, .overlay').click(function() {
+$('.popup, .close, .overlay').click(function() {
+	var body = document.querySelector("body"); // Переменная для запрета прокрутки страницы при открытии модалки (повторяется)
     $('.overlay, .popup').hide();
+	body.style.overflow = ''; // Разрешаемм прокрутку станицы при закрытии модалки
 })
 
 
@@ -141,11 +145,15 @@ $('.popup .close, .overlay').click(function() {
 
 $('.open_burger').click(function() {
     var burger_id = $('#' + $(this).attr("rel"));
+	var body = document.querySelector("body"); // Переменная для запрета прокрутки страницы при открытии модалки
     $(burger_id).show();
     $('.overlay').show();
+	body.style.overflow = 'hidden'; // Запрещаем прокрутку станицы при открытии модалки
 })
 $('.burger .close, .overlay, .footer__link').click(function() {
+	var body = document.querySelector("body"); // Переменная для запрета прокрутки страницы при открытии модалки (повторяется)
     $('.overlay, .burger').hide();
+	body.style.overflow = ''; // Разрешаемм прокрутку станицы при закрытии модалки
 })
 
 

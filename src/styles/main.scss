@@ -34,7 +34,7 @@ body {
     font-size: 1.4rem;
     font-family: $inter;
     color: $black;
-  /*  overflow-x: hidden;*/
+    overflow-x: hidden;
 }
 
 .first {
@@ -701,7 +701,6 @@ body {
         margin-bottom: 4.5rem;
         @media (max-width: $r_tab) {
             flex-direction: column;
-            align-items: flex-start;
             margin-top: 3rem;
             margin-bottom: 3.5rem;
         }
@@ -722,6 +721,9 @@ body {
         @media (max-width: $r_desk) {
             font-size: 1.6rem;
         }
+        @media (max-width: $r_tab) {
+            font-size: 2.6rem;
+        }
         @media (max-width: $r_mob_400) {
             font-size: 2rem;
         }
@@ -735,7 +737,7 @@ body {
         @media (max-width: $r_tab) {
             margin-top: 3rem;
             margin-bottom: 3rem;
-            max-width: 350px;
+            max-width: 460px;
         }
         @media (max-width: $r_mob_400) {
             max-width: 285px;
@@ -744,6 +746,9 @@ body {
     &__p, &__time {
         @media (max-width: $r_desk) {
             font-size: 1.2rem;
+        }
+        @media (max-width: $r_tab) {
+            font-size: 1.8rem;
         }
         @media (max-width: $r_mob_400) {
             font-size: 1.5rem;
@@ -762,10 +767,14 @@ body {
             height: 300px;
         }
         @media (max-width: $r_tab_900) {
-            width: 400px;
-            height: 260px;
+            width: 470px;
+            height: 313px;
         }
-        @media (max-width: $r_mob_470) {
+        @media (max-width: $r_tab) {
+            width: 502px;
+            height: 337px;
+        }
+        @media (max-width: $r_mob_540) {
             width: 340px;
             height: 190px;
         }
@@ -1291,7 +1300,11 @@ body {
         align-items: flex-start;
         flex-direction: column;
         position: relative;
+        @media (max-width: $r_desk_hd) {
+            margin-right: 15px;
+        }
         @media (max-width: 767px) {
+            margin-right: 0;
             margin-bottom: 60px;
         }
         &::after {
@@ -1703,6 +1716,9 @@ Pop-up Обсудить проект
     padding:30px;
     @media (max-width: $r_desk) {
         width: 40rem;
+    }
+    @media (max-height: 700px) {
+        top: 3%;
     }
     @media (max-width: $r_mob_540) {
         width: 33rem;

@@ -6,7 +6,7 @@ const devServer = (isDev) => !isDev ? {} : {
     devServer: {
         open: true,
         hot: true,
-        port: 5050,
+        port: 8000,
     }
 };
 

@@ -2,7 +2,7 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
-    require '/src/PHPMailer/srs/Exception.php';
+    require '/src/PHPMailer/src/PHPMailer.php';
     require '/src/PHPMailer/srs/PHPMailer.php';
 
     $mail = new PHPMailer(true);
