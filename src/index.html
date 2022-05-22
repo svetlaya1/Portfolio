@@ -432,26 +432,23 @@
                             <label class="contacts__label">Телефон*:</label>
                             <input class="contacts__input _req" type="tel" placeholder="Ваш телефон" name="tel">
                             <label class="contacts__label">Выберете удобный способ связи</label>
-                             <!-- Dropdown -->
-                             <div class="form-group">
-                                <div class="dropdown">
-                                    <button class="dropdown__button">Telegram
-                                        <div class="arrow-4">
-                                            <span class="arrow-4-left"></span>
-                                            <span class="arrow-4-right"></span>
-                                        </div>
-                                    </button>
-                                    <ul class="dropdown__list">
-                                        <li class="dropdown__list-item" data-value="telegram">Telegram</li>
-                                        <li class="dropdown__list-item" data-value="whatsapp">WhatsApp</li>
-                                        <li class="dropdown__list-item" data-value="viber">Viber</li>
-                                        <li class="dropdown__list-item" data-value="phone">Звонок на телефон</li>
-                                        <li class="dropdown__list-item" data-value="sms">SMS сообщение</li>
-                                    </ul>
-                                    <input type="text" name="select-category" value="" class="dropdown__input-hidden" >
+                            <!-- Dropdown начало -->
+                            <div class="dropdown modal__users  modal_font">
+                                <div class="dropdown__box">
+                                  <button type="button" class="dropdown__button">Telegram</button>
+                                  <span class="dropdown__button_arrow drbtnar"></span>
                                 </div>
-                            </div>
-                            <!-- END -- Dropdown -->
+                                <div class="dropdown__list">
+                                  <ul class="dropdown__wrap">
+                                    <li class="dropdown__list-item modal__form_item modal_font" data-value="telegram">Telegram</li>
+                                    <li class="dropdown__list-item modal__form_item modal_font" data-value="whatsApp">WhatsApp</li>
+                                    <li class="dropdown__list-item modal__form_item modal_font" data-value="viber">Viber</li>
+                                    <li class="dropdown__list-item modal__form_item modal_font" data-value="phone">Звонок на телефон</li>
+                                  </ul>
+                                </div>
+                                <input type="text" name="select-category" class="dropdown__input-hidden">
+                              </div>
+                            <!-- END -- Dropdown конец -->
                             <a class="contacts__button description_big-700" id="btn" href="#">Отправить</a>
                         </form>
                     </div>
@@ -512,27 +509,24 @@
                 <label class="contacts__label popup__label">Телефон*:</label>
                 <input class="contacts__input _req" type="tel" placeholder="Ваш телефон" name="tel">
                 <label class="contacts__label popup__label">Выберете удобный способ связи</label>
-                 <!-- Dropdown -->
-                 <div class="form-group">
-                    <div class="dropdown">
-                        <button class="dropdown__button">Telegram
-                            <div class="arrow-4">
-                                <span class="arrow-4-left"></span>
-                                <span class="arrow-4-right"></span>
-                            </div>
-                        </button>
-                        <ul class="dropdown__list">
-                            <li class="dropdown__list-item" data-value="telegram">Telegram</li>
-                            <li class="dropdown__list-item" data-value="whatsapp">WhatsApp</li>
-                            <li class="dropdown__list-item" data-value="viber">Viber</li>
-                            <li class="dropdown__list-item" data-value="phone">Звонок на телефон</li>
-                            <li class="dropdown__list-item" data-value="sms">SMS сообщение</li>
-                        </ul>
-                        <input type="text" name="select-category" value="" class="dropdown__input-hidden" >
+                <!-- Dropdown начало -->
+                <div class="dropdown modal__users  modal_font">
+                    <div class="dropdown__box">
+                    <button type="button" class="dropdown__button">Telegram</button>
+                    <span class="dropdown__button_arrow drbtnar"></span>
                     </div>
+                    <div class="dropdown__list">
+                    <ul class="dropdown__wrap">
+                        <li class="dropdown__list-item modal__form_item modal_font" data-value="telegram">Telegram</li>
+                        <li class="dropdown__list-item modal__form_item modal_font" data-value="whatsApp">WhatsApp</li>
+                        <li class="dropdown__list-item modal__form_item modal_font" data-value="viber">Viber</li>
+                        <li class="dropdown__list-item modal__form_item modal_font" data-value="phone">Звонок на телефон</li>
+                    </ul>
+                    </div>
+                    <input type="text" name="select-category" class="dropdown__input-hidden">
                 </div>
-                <!-- END -- Dropdown -->
-            <a class="contacts__button description_big-700" id="btn" href="#">Отправить</a>   
+                <!-- END -- Dropdown конец -->
+            <a class="contacts__button description_big-700" id="btn2" href="#">Отправить</a>   
             </form>
         </div>
     </div>

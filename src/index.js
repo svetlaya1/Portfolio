@@ -1,6 +1,9 @@
 import 'normalize.css'
 import './styles/main.scss'
 
+
+// СЛАЙДЕР 
+
 import Swiper, { Pagination } from 'swiper';
 
 import 'swiper/css';
@@ -15,11 +18,10 @@ var swiper = new Swiper(".portfolioSwiper", {
 
 
 
+ // ДРОПДАУН
 
- // 	ДРОПДАУН   
-  
-  // Полифилл для метода forEach для NodeList
-if (window.NodeList && !NodeList.prototype.forEach) {
+ // Полифилл для метода forEach для NodeList
+ if (window.NodeList && !NodeList.prototype.forEach) {
 	NodeList.prototype.forEach = function (callback, thisArg) {
 		thisArg = thisArg || window;
 		for (var i = 0; i < this.length; i++) {
@@ -28,18 +30,21 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 	};
 }
 
+
 document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
 	const dropDownBtn = dropDownWrapper.querySelector('.dropdown__button');
 	const dropDownList = dropDownWrapper.querySelector('.dropdown__list');
 	const dropDownListItems = dropDownList.querySelectorAll('.dropdown__list-item');
-	const dropDownInput = dropDownWrapper.querySelector('.dropdown__input-hidden');
-
+	const dropDownInput = dropDownWrapper.querySelector('.dropdown__input-hidden');            
+	const button_arrow = document.querySelector('.dropdown__button_arrow');
+	dropDownInput.value = dropDownBtn.innerText;
+	
 	// Клик по кнопке. Открыть/Закрыть select
 	dropDownBtn.addEventListener('click', function (e) {
 		dropDownList.classList.toggle('dropdown__list--visible');
-        this.classList.add('dropdown__button--active');
+		button_arrow.classList.toggle('dropdown__button_arrow-active');
+		this.classList.add('dropdown__button--active');
 	});
-
 	// Выбор элемента списка. Запомнить выбранное значение. Закрыть дропдаун
 	dropDownListItems.forEach(function (listItem) {
 		listItem.addEventListener('click', function (e) {
@@ -48,6 +53,7 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
 			dropDownBtn.focus();
 			dropDownInput.value = this.dataset.value;
 			dropDownList.classList.remove('dropdown__list--visible');
+			button_arrow.classList.remove('dropdown__button_arrow-active');
 		});
 	});
 
@@ -68,12 +74,7 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
 	});
 });
 
-// СТРЕЛКА ДЛЯ ДРОПДАУНА
-
-$(".dropdown__button").click(function() {
-    $(this).toggleClass("open");
-});
-
+ 
 
 // КНОПКА ОТПРАВИТЬ С КРАСИВЫМ ХОВЕР
 
@@ -81,13 +82,25 @@ const button = document.getElementById('btn');
 
 button.addEventListener("mousemove", (e)=> {
   
-  const posX = e.pageX - e.target.offsetLeft;
-  const posY = e.pageY - e.target.offsetTop;
+  const posX = e.offsetX==undefined?e.layerX:e.offsetX;
+  const posY = e.offsetY==undefined?e.layerY:e.offsetY;
   
   e.target.style.setProperty("--x", `${posX}px`);
   e.target.style.setProperty("--y", `${posY}px`);
   
-}) 
+}); 
+
+const button2 = document.getElementById('btn2');
+
+button2.addEventListener("mousemove", (e)=> {
+  
+	const posX2 = e.offsetX==undefined?e.layerX:e.offsetX;
+	const posY2 = e.offsetY==undefined?e.layerY:e.offsetY;
+  
+  e.target.style.setProperty("--x2", `${posX2}px`);
+  e.target.style.setProperty("--y2", `${posY2}px`);
+  
+})
 
 // ПОЯВЛЕНИЕ МЕНЮ ПРИ СКРОЛЛЕ ВВЕРХ И СКРЫТИЕ ПРИ СКРОЛЛЕ ВНИЗ
 
@@ -134,7 +147,7 @@ $('.open_popup').click(function() {
     $('.overlay').show();
 	body.style.overflow = 'hidden'; // Запрещаем прокрутку станицы при открытии модалки
 })
-$('.popup, .close, .overlay').click(function() {
+$('.close, .overlay').click(function() {
 	var body = document.querySelector("body"); // Переменная для запрета прокрутки страницы при открытии модалки (повторяется)
     $('.overlay, .popup').hide();
 	body.style.overflow = ''; // Разрешаемм прокрутку станицы при закрытии модалки
@@ -159,7 +172,7 @@ $('.burger .close, .overlay, .footer__link').click(function() {
 
 
 // ОТПРАВКА ФОРМЫ ОБРАТНОЙ СВЯЗИ 
-
+/*
 "use strict"
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -217,4 +230,4 @@ document.addEventListener('DOMContentLoaded', function () {
 		input.parentElement.classList.remove('_error');
 		input.classList.remove('_error');
 	}
-});
+});*/
