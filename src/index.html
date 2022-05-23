@@ -445,7 +445,7 @@
                             <input type="hidden" name="form_subject" value="Contact Form">
                             <!-- END Hidden Required Fields -->
                             <label class="contacts__label">Телефон*:</label>
-                            <input class="contacts__input _req" type="tel" placeholder="Ваш телефон" name="tel">
+                            <input required class="contacts__input _req" type="tel" placeholder="Ваш телефон" name="tel">
                             <label class="contacts__label">Выберете удобный способ связи</label>
                             <!-- Dropdown начало -->
                             <div class="dropdown modal__users  modal_font">
@@ -464,7 +464,7 @@
                                 <input type="text" name="select-category" class="dropdown__input-hidden">
                               </div>
                             <!-- END -- Dropdown конец -->
-                            <a class="contacts__button description_big-700" id="btn" href="#">Отправить</a>
+                            <button class="contacts__button description_big-700" id="btn" href="#">Отправить</button>
                         </form>
                     </div>
                 </div>
@@ -521,8 +521,13 @@
                 <rect width="560" height="1"></rect>
             </svg>
             <form class="contacts__form popup__form" id="form">
+                <!-- Hidden Required Fields -->
+                <input type="hidden" name="project_name" value="Portfolio Site">
+                <input type="hidden" name="admin_email" value="svetlaya_st@list.ru">
+                <input type="hidden" name="form_subject" value="Contact Form">
+                <!-- END Hidden Required Fields -->
                 <label class="contacts__label popup__label">Телефон*:</label>
-                <input class="contacts__input _req" type="tel" placeholder="Ваш телефон" name="tel">
+                <input required class="contacts__input _req" type="tel" placeholder="Ваш телефон" name="tel">
                 <label class="contacts__label popup__label">Выберете удобный способ связи</label>
                 <!-- Dropdown начало -->
                 <div class="dropdown modal__users  modal_font">
