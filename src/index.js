@@ -179,10 +179,10 @@ $(document).ready(function() {
 		var th = $(this);
 		$.ajax({
 			type: "POST",
-			url: "/src/mail.php", //Change
+			url: "mail.php", //Change
 			data: th.serialize()
 		}).done(function() {
-			alert("Thank you!");
+			alert("Ваше сообщение успешно отправлено, я свяжусь с вами в ближайшее время");
 			setTimeout(function() {
 				// Done Functions
 				th.trigger("reset");
